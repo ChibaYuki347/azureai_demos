@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import type { SVGProps } from "react";
+// import type { SVGProps } from "react";
 // import avatar from "@/public/assets/AvatarImages/1.png";
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 // import visemeId0 from "assets/icons/visemes/viseme_id_0.svg";
@@ -35,7 +35,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 let visemesList: Array<sdk.SpeechSynthesisVisemeEventArgs> = [];
 
-function Avatar(props: SVGProps<SVGSVGElement>) {
+function AvatarTalk() {
   interface IMap {
     [key: string]: string;
   }
@@ -74,11 +74,11 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
     "Hi! I am your virtual friend"
   );
 
-  const sentences = [
-    "hello",
-    "hakuna matata",
-    "a friend in need is a friend in deed",
-  ];
+  // const sentences = [
+  //   "hello",
+  //   "hakuna matata",
+  //   "a friend in need is a friend in deed",
+  // ];
 
   function synthesizeSpeech() {
     const speechConfig = sdk.SpeechConfig.fromSubscription(
@@ -160,7 +160,7 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
         height="500"
         fill="none"
         viewBox="0 0 500 500"
-        {...props}
+        // {...props}
         >
         <path fill="url(#avatar_svg__a)" d="M0 0h500v500H0z" />
         <path fill="url(#avatar_svg__b)" d="M216 224h69v66h-69z" />
@@ -215,4 +215,4 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
     </div>
   );
 }
-export default Avatar;
+export default AvatarTalk;

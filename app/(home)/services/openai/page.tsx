@@ -1,6 +1,6 @@
 "use client";
 // import { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 // import { CounterClockwiseClockIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/new-york/button";
