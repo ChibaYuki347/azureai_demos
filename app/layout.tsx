@@ -17,12 +17,13 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-spaceGrotesk",
 });
 
+
 export const metadata: Metadata = {
   title: "Azure AI Demos",
   description: "Demos for Azure AI services",
-  icons: {
-    icon: "/assets/images/site-logo.svg",
-  },
+  // icons: {
+  //   icon: "/assets/images/site-logo.svg",
+  // },
 };
 
 export default function RootLayout({

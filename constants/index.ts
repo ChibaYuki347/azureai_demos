@@ -9,11 +9,35 @@ export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/star.svg",
     route: "/services",
-    label: "Services",
+    label: "サービスデモ",
+    subSidebarLinks: [
+      // {
+      //   route: "/services/openai",
+      //   label: "OpenAI",
+      // },
+      {
+        route: "/services/openai-chat",
+        label: "OpenAI Chat",
+      },
+      {
+        route: "/services/aispeech",
+        label: "AI Speech",
+      },
+    ],
   },
   {
     imgURL: "/assets/icons/star.svg",
-    route: "/demos",
-    label: "Demos",
+    route: "/usecases",
+    label: "ユースケース",
+    subSidebarLinks: [
+      {
+        route: "/usecases/avatertalk",
+        label: "Avatar Talk",
+      },
+      {
+        route: "/usecases/call-center-order",
+        label: "コールセンター注文",
+      },
+    ],
   },
 ];
