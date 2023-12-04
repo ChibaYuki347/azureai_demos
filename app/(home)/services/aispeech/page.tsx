@@ -9,20 +9,9 @@ import { getTokenOrRefresh } from "@/lib/actions/speech";
 const SPEECH_KEY = process.env.NEXT_PUBLIC_SPEECH_KEY;
 const SPEECH_REGION = process.env.NEXT_PUBLIC_SPEECH_REGION;
 
-// TODO: Add Types for SpeechConfig and AudioConfig
-// interface speechConfigCurrent {
-//   speechRecognitionLanguage?: string;
-// }
+// TODO: Fix TypeScript errors
 
-// interface SpeechConfigType {
-//   current?: speechConfigCurrent;
-// }
-
-// interface audioConfig {
-//   current?: any;
-// }
-
-export function SpeechToTextComponent() {
+export default function SpeechToTextComponent() {
   const [isListening, setIsListening] = useState(false);
   const speechConfig = useRef<null>(null);
   const audioConfig = useRef<null>(null);
@@ -83,39 +72,7 @@ export function SpeechToTextComponent() {
     };
   }, [isListening]);
 
-  // const intializeRecognizer = () => {
-  //   speechConfig.current = sdk.SpeechConfig.fromSubscription(
-  //     SPEECH_KEY,
-  //     SPEECH_REGION
-  //   );
-  //   speechConfig.current.speechRecognitionLanguage = "ja-JP";
 
-  //   audioConfig.current = sdk.AudioConfig.fromDefaultMicrophoneInput();
-  //   recognizer.current = new sdk.SpeechRecognizer(
-  //     speechConfig.current,
-  //     audioConfig.current
-  //   );
-  // }
-
-  // const startListening = () =>  {
-  //   speechConfig.current = sdk.SpeechConfig.fromSubscription(
-  //     SPEECH_KEY,
-  //     SPEECH_REGION
-  //   );
-  //   speechConfig.current.speechRecognitionLanguage = "ja-JP";
-  
-  //   audioConfig.current = sdk.AudioConfig.fromDefaultMicrophoneInput();
-  //   recognizer.current = new sdk.SpeechRecognizer(
-  //     speechConfig.current,
-  //     audioConfig.current
-  //   );
-  
-  //   recognizer.current.startContinuousRecognitionAsync(() => {
-  //     console.log("Speech recognition started.");
-  //     setIsListening(true);
-  //   });
-  //   return recognizer
-  // };
   const processRecognizedTranscript = (event) => {
     const result = event.result;
     console.log("Recognition result:", result);
@@ -192,14 +149,12 @@ export function SpeechToTextComponent() {
 
       <div>
         <h2>認識している音声</h2>
-        <Textarea value={recognizingTranscript} />
+        <Textarea value={recognizingTranscript} readOnly/>
         {/* <div>Recognizing Transcript : {recognizingTranscript}</div> */}
         {/* <div>RecognizedTranscript : {myTranscript}</div> */}
         <h2>認識した音声</h2>
-        <Textarea value={myTranscript} />
+        <Textarea value={myTranscript} readOnly/>
       </div>
     </div>
   );
 }
-
-export default SpeechToTextComponent;

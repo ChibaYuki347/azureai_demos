@@ -40,30 +40,6 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
     [key: string]: string;
   }
 
-  // const visemeMap: IMap = {
-    // 0: visemeId0,
-    // 1: visemeId1,
-    // 2: visemeId2,
-    // 3: visemeId3,
-    // 4: visemeId4,
-    // 5: visemeId5,
-    // 6: visemeId6,
-    // 7: visemeId7,
-    // 8: visemeId8,
-    // 9: visemeId9,
-    // 10: visemeId10,
-    // 11: visemeId11,
-    // 12: visemeId12,
-    // 13: visemeId13,
-    // 14: visemeId14,
-    // 15: visemeId15,
-    // 16: visemeId16,
-    // 17: visemeId17,
-    // 18: visemeId18,
-    // 19: visemeId19,
-    // 20: visemeId20,
-    // 21: visemeId21,
-  // };
 
   const visemeMap: IMap = {
     0: '/assets/icons/visemes/viseme_id_0.svg',
@@ -156,8 +132,8 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
   }
 
   const handleClick = () => {
-    const randomIndex = Math.floor(Math.random() * sentences.length);
-    setSelectedSentence(sentences[randomIndex]);
+    // const randomIndex = Math.floor(Math.random() * sentences.length);
+    // setSelectedSentence(sentences[randomIndex]);
     synthesizeSpeech();
   };
 
@@ -165,7 +141,7 @@ function Avatar(props: SVGProps<SVGSVGElement>) {
     setSelectedVoice(event.target.value);
   };
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="mb-5 flex flex-col content-center items-center justify-around">
         <select value={selectedVoice} onChange={handleVoiceChange}>
           {FemaleSpeakers.map((voice) => (
