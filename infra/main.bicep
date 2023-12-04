@@ -135,7 +135,7 @@ module openai 'core/ai/cognitiveservices.bicep' = {
   params: {
     name: '${abbrs.cognitiveServicesAccounts}${resourceToken}-openai'
     location: openAiResourceGroupLocation
-    tags: union(tags, { 'azd-service-name': appServiceName })
+    tags: union(tags, { 'azd-service-name': 'openai' })
     sku: {
       name: openAiSkuName
     }
